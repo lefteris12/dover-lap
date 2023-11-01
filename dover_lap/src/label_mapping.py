@@ -30,6 +30,8 @@ class LabelMapping:
             greedy_map = GreedyMap(second_maximal=second_maximal)
             label_mapping, weights = greedy_map.compute_mapping(turns_list)
 
+        print("Label mapping")
+        print(label_mapping)
         # Get mapped speaker labels using the mapping
         mapped_turns_list = []
         for i, turns in enumerate(turns_list):
