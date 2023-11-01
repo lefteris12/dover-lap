@@ -29,6 +29,8 @@ class DOVERLap:
             method=label_mapping,
             second_maximal=second_maximal,
         )
+        
+        
 
         # Compute weights based on rank
         if weight_type == "rank":
@@ -40,6 +42,10 @@ class DOVERLap:
         elif weight_type == "norm":
             weights /= np.linalg.norm(weights, ord=1)  # use normalized weights
 
+        print("mapped turns list:")
+        print(mapped_turns_list)
+        print("Weights")
+        print(weights)
         # Label voting stage
         combined_turns_list = LabelVoting.get_combined_turns(
             mapped_turns_list,
